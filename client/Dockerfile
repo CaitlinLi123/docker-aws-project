@@ -10,5 +10,5 @@ RUN npm run build
 # this one serves the frontend assets
 FROM nginx
 EXPOSE 3000
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY ./default.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/build /usr/share/nginx/html
