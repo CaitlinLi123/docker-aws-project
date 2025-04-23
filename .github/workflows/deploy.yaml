@@ -12,15 +12,15 @@ jobs:
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      - run: docker build -t docker-aws-project/react-test -f ./client/Dockerfile.dev ./client
-      - run: docker run -e CI=true docker-aws-project/react-test npm test
+      - run: docker build -t yuli12345/react-test -f ./client/Dockerfile.dev ./client
+      - run: docker run -e CI=true yuli12345/react-test npm test
 
-      - run: docker build -t docker-aws-project/multi-client ./client
-      - run: docker build -t docker-aws-project/multi-nginx ./nginx
-      - run: docker build -t docker-aws-project/multi-server ./server
-      - run: docker build -t docker-aws-project/multi-worker ./worker
+      - run: docker build -t yuli12345/multi-client ./client
+      - run: docker build -t yuli12345/multi-nginx ./nginx
+      - run: docker build -t yuli12345/multi-server ./server
+      - run: docker build -t yuli12345/multi-worker ./worker
 
-      - run: docker push docker-aws-project/multi-client
-      - run: docker push docker-aws-project/multi-nginx
-      - run: docker push docker-aws-project/multi-server
-      - run: docker push docker-aws-project/multi-worker
+      - run: docker push yuli12345/multi-client
+      - run: docker push yuli12345/multi-nginx
+      - run: docker push yuli12345/multi-server
+      - run: docker push yuli12345/multi-worker
